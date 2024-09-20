@@ -1,0 +1,33 @@
+<div id="card">
+	<div id="inside">
+		<header>
+			<div class="left">
+				<div id="name">{{monster.name}}</div>
+			</div>
+			<div class="right">
+				<div id="hp">{{monster.hp}} HP</div>
+				<img class="energy icon" src="assets/img/pokemon-5426712_640.png" />
+			</div>
+		</header>
+		<figure id="art">
+			<img src="assets/img/pokemon-5426712_640.png"/>
+			<figcaption>{{monster.figureCaption}}</figcaption>
+		</figure>
+		<div id="capacities">
+			<div class="capacity">
+				<div class="main">
+					<div class="cost">
+						<img class="icon energy" src="assets/img/pokemon-5426712_640.png" />
+						<img class="icon energy" src="assets/img/pokemon-5426712_640.png" />
+					</div>
+					<div class="name">{{monster.attackName}}</div>
+					<div class="damage">{{monster.attackStrength}}</div>
+				</div>
+				<div class="description">
+					This is a long description of a monster attack.
+					Probably something to do with electricity...
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
