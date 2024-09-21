@@ -6,8 +6,8 @@ import { Monster } from '../../models/monster.model';
   standalone: true,
   imports: [],
   templateUrl: './playing-card.component.html',
-  styleUrl: './playing-card.component.css'
+  styleUrl: './playing-card.component.css',
 })
 export class PlayingCardComponent {
-  @Input() monster: Monster = new Monster();
+  @Input() monster = new Monster();
 }
