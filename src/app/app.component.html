@@ -1,6 +1,6 @@
-<button (click)="toggleMonster()">Toggle Monster</button>
 <div id="card-list">
   <app-playing-card
-    [monster]="monsters[selectedMonsterIndex()]"
+    *ngFor="let monster of monsters"
+    [monster]="monster"
   ></app-playing-card>
 </div>
