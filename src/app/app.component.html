@@ -1,4 +1,6 @@
 <button (click)="toggleMonster()">Toggle Monster</button>
 <div id="card-list">
-  <app-playing-card [monster]=""></app-playing-card>
+  <app-playing-card
+    [monster]="monsters[selectedMonsterIndex()]"
+  ></app-playing-card>
 </div>
