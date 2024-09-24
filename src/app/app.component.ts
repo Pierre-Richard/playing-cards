@@ -22,6 +22,12 @@ export class AppComponent {
   monsters!: Monster[];
   search = model('');
 
+  filteredMonsters = computed(() => {
+    return this.monsters.filter((monster) =>
+      monster.name.includes(this.search())
+    );
+  });
+
   constructor() {
     this.monsters = [];
 
