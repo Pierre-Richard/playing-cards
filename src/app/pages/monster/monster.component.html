@@ -1,18 +1,85 @@
-<form (submit)="submit($event)">
+<form [formGroup]="formGroup" (submit)="submit()">
   <div class="form-field">
     <label for="name">Name</label>
-    <input id="name" name="name" type="text" [formControl]="name" />
-    @if(name.invalid && (name.dirty || name.touched)){
-    <div class="error">this field is required</div>
+    <input id="name" name="name" type="text" formControlName="name" />
+    @if (isFieldValid('name')) {
+    <div class="error">This field is required.</div>
     }
   </div>
-
+  <div class="form-field">
+    <label for="image">Image</label>
+    <input
+      id="image"
+      name="image"
+      type="file"
+      (change)="onFileChange($event)"
+    />
+    @if (isFieldValid('image')) {
+    <div class="error">This field is required.</div>
+    }
+  </div>
+  <div class="form-field">
+    <label for="type">Type</label>
+    <select id="type" name="type" formControlName="type">
+      @for (type of monsterTypes; track type) {
+      <option [value]="type">{{ type }}</option>
+      }
+    </select>
+  </div>
   <div class="form-field">
     <label for="hp">HP</label>
-    <input id="hp" name="hp" type="number" [formControl]="hp" />
-    @if(hp.invalid && (hp.dirty || hp.touched)){
-    <div class="error">this field is required</div>
+    <input id="hp" name="hp" type="number" formControlName="hp" />
+    @if (isFieldValid('hp')) {
+    <div class="error">This field is not valid.</div>
     }
   </div>
-  <button type="submit" [disabled]="name.invalid">Save</button>
+  <div class="form-field">
+    <label for="figureCaption">Figure caption</label>
+    <input
+      id="figureCaption"
+      name="figureCaption"
+      type="text"
+      formControlName="figureCaption"
+    />
+    @if (isFieldValid('figureCaption')) {
+    <div class="error">This field is required.</div>
+    }
+  </div>
+  <div class="form-field">
+    <label for="attackName">Attack name</label>
+    <input
+      id="attackName"
+      name="attackName"
+      type="text"
+      formControlName="attackName"
+    />
+    @if (isFieldValid('attackName')) {
+    <div class="error">This field is required.</div>
+    }
+  </div>
+  <div class="form-field">
+    <label for="attackStrength">Attack strength</label>
+    <input
+      id="attackStrength"
+      name="attackStrength"
+      type="number"
+      formControlName="attackStrength"
+    />
+    @if (isFieldValid('attackStrength')) {
+    <div class="error">This field is not valid.</div>
+    }
+  </div>
+  <div class="form-field">
+    <label for="attackDescription">Attack Description</label>
+    <input
+      id="attackDescription"
+      name="attackDescription"
+      type="text"
+      formControlName="attackDescription"
+    />
+    @if (isFieldValid('attackDescription')) {
+    <div class="error">This field is required.</div>
+    }
+  </div>
+  <button type="submit" [disabled]="formGroup.invalid">Save</button>
 </form>

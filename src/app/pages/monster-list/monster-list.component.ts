@@ -21,9 +21,7 @@ export class MonsterListComponent {
     );
   });
 
-  constructor() {
-    this.monsters.set(this.monsterService.getAll());
-  }
+  constructor() {}
   addMonster() {
     const genericMonster = new Monster();
     this.monsterService.add(genericMonster);
